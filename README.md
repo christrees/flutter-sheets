@@ -1,6 +1,25 @@
 # flutter-sheets
 flutter application to read and write google sheets
 
+## [DevTools for Flutter](https://flutter.dev/docs/development/tools/devtools/overview)
+1. Install via [cli](https://flutter.dev/docs/development/tools/devtools/cli)
+```
+flutter pub global activate devtools
+```
+2. Start Server
+```
+flutter pub global run devtools   # If you have `flutter` on your path.
+```
+3. Run App
+```
+chris@catSurface MINGW64 ~/code
+$ cd catsheets/
+
+chris@catSurface MINGW64 ~/code/catsheets
+$ flutter run
+```
+4. Connect to [http://localhost:9100](http://localhost:9100) and follow instructions to connect
+
 ## catsheets based off of [Flutter App to Google Sheets](https://www.westernhomecommunities.org/)
 1. Create a new blank google sheet [TC 1:28](https://youtu.be/x2CoecrzBCA?t=88)
   - [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
