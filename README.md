@@ -5,7 +5,7 @@ flutter application to read and write google sheets
 1. Create a new blank google sheet [TC 1:28](https://youtu.be/x2CoecrzBCA?t=88)
   - [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
   - Put names in first row Name, Email, Phone and Feedback
-2. Add script access [TC 2:14](https://youtu.be/x2CoecrzBCA?t=134_
+2. Add script access [TC 2:14](https://youtu.be/x2CoecrzBCA?t=134)
   - Tools -> Script Editor
   - Add the following
   ```
@@ -28,7 +28,7 @@ flutter application to read and write google sheets
   ```
 3. Publish -> Deploy as web app [TC 10:28](https://youtu.be/x2CoecrzBCA?t=628)
   - Publish -> Deploy as web app
-  - Name: catsheets
+  - Name: catsheetsdata
   - Project Version: 
     - New "Initial catsheets web app"
     - Execute the app as: Me
