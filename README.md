@@ -1,6 +1,74 @@
 # flutter-sheets
 flutter application to read and write google sheets
 
+## catsheets based off of [Flutter App to Google Sheets](https://www.westernhomecommunities.org/)
+1. Create a new blank google sheet [TC 1:28](https://youtu.be/x2CoecrzBCA?t=88)
+  - [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
+  - Put names in first row Name, Email, Phone and Feedback
+2. Add script access [TC 2:14](https://youtu.be/x2CoecrzBCA?t=134_
+  - Tools -> Script Editor
+  - Add the following
+  ```
+  function doGet(request){
+    var sheet = SpreadsheetApp.openById("putgooglesheetidhere");
+    var result = {"status":"SUCCESS"};
+    try{
+      var name = request.parameter.name;
+      var email = request.parameter.email;
+      var phone = request.parameter.phone;
+      var feedback = request.parameter.feedback;
+      var rowData = sheet.appendRow([name,email,phone,feedback]);
+    }catch(exe){
+      result = {"status":"FAILED","message":exe};
+    }
+    return ContentService
+      .createTextOutput(JSON.stringify(result))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  ```
+3. Publish -> Deploy as web app [TC 10:28](https://youtu.be/x2CoecrzBCA?t=628)
+  - Publish -> Deploy as web app
+  - Name: catsheets
+  - Project Version: 
+    - New "Initial catsheets web app"
+    - Execute the app as: Me
+    - Who has access: Anyone, even anonymous
+  - Deploy
+  - Use your google account
+  - Advanced:
+    - Go to catsheet (unsafe)
+    - Allow
+  - Copy web app URL string and save somewhere safe
+4. Edit pubspec.yaml in catsheet project [TC 11:57](https://youtu.be/x2CoecrzBCA?t=717)
+  - Add http: under dependencies
+  - Click Packages get (or reload packages)
+5. Create StatefulWidget (after cleanup) [TC 12:20](https://youtu.be/x2CoecrzBCA?t=740)
+6. Create a Model [TC 14:28](https://youtu.be/x2CoecrzBCA?t=868)
+  - in lib (right click) New -> Package -> models
+  - in models (right click) New -> Dart File -> feedback_form
+  - Code for feedback_form [form.dart](https://github.com/theindianappguy/flutter_google_sheets/blob/master/lib/model/form.dart)
+  ```
+  class FeedbackForm{
+    String _name;
+    String _email;
+    String _phone;
+    String _feedback;
+    FeedbackForm(this._name,this._email,this._phone,this._feedback);
+    String toParams() => "?name=$_name&email=$_email&phone=$_phone&feedback=$_feedback";
+  }
+  ```
+7. Create a Controller [TC 19:52](https://youtu.be/x2CoecrzBCA?t=1192)
+  - in lib (right click) New -> Dart File -> controller
+  - Code for [controller.dart](https://github.com/theindianappguy/flutter_google_sheets/blob/master/lib/controller.dart))
+  ```
+  ```
+8. Create a UI code [TC 33:40](https://youtu.be/x2CoecrzBCA?t=2020)
+  - 
+  - Code for [main.dart](https://github.com/theindianappguy/flutter_google_sheets/blob/master/lib/main.dart)
+  ```
+  ```
+
+
 ## [Flutter Test Drive](https://flutter.dev/docs/get-started/test-drive?tab=terminal)
 1. Create flutter project
   ```
