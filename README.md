@@ -1,5 +1,36 @@
 # flutter-sheets
-flutter application to read and write google sheets
+flutter application to read and write google sheets [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
+
+## [Add Dropdown List](https://www.youtube.com/watch?v=yV5Ev_hI4Qo) based on [dropdown-list-in-flutter](http://www.coderzheaven.com/2019/04/16/dropdown-list-in-flutter/)
+
+1. Create List Data Class [TC 0:45](https://youtu.be/yV5Ev_hI4Qo?t=45)
+```
+class Whopile {
+  int id;
+  String name;
+  Whopile(this.id, this.name);
+  static List<Whopile> getWhopile() {
+    return <Whopile>[
+      Whopile(1, 'AL'),
+      Whopile(2, 'Carla'),
+      Whopile(3, 'Chris'),
+      Whopile(4, 'Carol'),
+    ];
+  }
+}
+```
+2. Create DropDownState
+```
+tbd
+```
+3. Call DropDown List in UI
+```
+tbd
+```
+
+## Debug catsheets
+- [Google SpreadsheetApp Reference](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#openById(String))
+- Google foo-bars openByID - [Fix using SpreadsheetApp.open(DriveApp.getFileById(ID))](https://stackoverflow.com/questions/32077888/spreadsheetapp-openbyurl-and-openbyid-give-errors)
 
 ## [DevTools for Flutter](https://flutter.dev/docs/development/tools/devtools/overview)
 1. Install via [cli](https://flutter.dev/docs/development/tools/devtools/cli)
@@ -17,6 +48,22 @@ $ cd catsheets/
 
 chris@catSurface MINGW64 ~/code/catsheets
 $ flutter run
+Launching lib\main.dart on PH 1 in debug mode...
+Running Gradle task 'assembleDebug'...                             54.0s
+√ Built build\app\outputs\flutter-apk\app-debug.apk.
+Installing build\app\outputs\flutter-apk\app.apk...                 5.3s
+Waiting for PH 1 to report its views...                              8ms
+Syncing files to device PH 1...                                    255ms
+
+Flutter run key commands.
+r Hot reload.
+R Hot restart.
+h Repeat this help message.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+An Observatory debugger and profiler on PH 1 is available at: http://127.0.0.1:59138/pQbZfBZrqjY=/
+
 ```
 4. Connect to [http://localhost:9100](http://localhost:9100) and follow instructions to connect
 
@@ -260,7 +307,17 @@ $ flutter run
 - [Learn How to Save Data from Flutter App to Google Sheets | Flutter Tutorial For Beginners](https://www.youtube.com/watch?v=x2CoecrzBCA)
 - [Flutter PWA Tutorial - 1/2](https://www.youtube.com/watch?v=i6GS3lCkAY8)
 - [Flutter Official PWA Support - 2/2](https://www.youtube.com/watch?v=abKzgvl-Ceg)
+- [Google Sheets intallable trigger](https://developers.google.com/apps-script/guides/triggers/installable)
+- [DropDown And Multiple DropDown In Flutter](https://www.youtube.com/watch?v=dbcB8d8WlJo)
+- [AndriodX Migration](https://flutter.dev/docs/development/androidx-migration)
+- [desiprogrammer - Dropdown In Flutter](https://gitlab.com/desiprogrammer/flutter_dropdown) [Tutorial](https://youtu.be/dbcB8d8WlJo)
+- [Flutter : Drop down 1](https://www.youtube.com/watch?v=0h0oNEwupUA)
+- [Flutter : Drop down 2](https://www.youtube.com/watch?v=0c5lpKKtwG0)
+- [DesiProgrammer - YouTube Channel](https://www.youtube.com/c/DesiProgrammer/videos)
 - [tbd]()
 - [tbd]()
 - [tbd]()
 - [tbd]()
+- [tbd]()
+- [tbd]()
+
