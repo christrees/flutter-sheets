@@ -1,8 +1,10 @@
 # flutter-sheets
 flutter application to read and write google sheets [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
 
+## [Add photo sharing](https://codelabs.developers.google.com/codelabs/google-photos-sharing/#0)
+Adding photo share and link into [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
 
-## [Add Geolocation](https://pub.dev/packages/geolocator)
+## [Add Geolocation](https://pub.dev/packages/geolocator) git commit "geo working"
 Adding geolocation to row data column 'where' on save
 
 1. Add dependency in pubspec.yaml
