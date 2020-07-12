@@ -1,31 +1,60 @@
 # flutter-sheets
 flutter application to read and write google sheets [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
 
+
+## [Add Geolocation](https://pub.dev/packages/geolocator)
+Adding geolocation to row data column 'where' on save
+
+1. Add dependency in pubspec.yaml
+```
+dependencies:
+  flutter:
+    sdk: flutter
+  http:
+  geolocator: ^5.3.2+2
+```
+2. Add Import to main.dart
+```
+import 'package:geolocator/geolocator.dart';
+```
+3. Add position call which requires async to _submitForm()_ this might be wrong but it seemed to work
+```
+  Future<void> _submitForm() async {
+    if (_formKey.currentState.validate()) {
+      Position position = await Geolocator()
+          .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+```
 ## [Add Dropdown List](https://www.youtube.com/watch?v=yV5Ev_hI4Qo) based on [dropdown-list-in-flutter](http://www.coderzheaven.com/2019/04/16/dropdown-list-in-flutter/)
 
-1. Create List Data Class [TC 0:45](https://youtu.be/yV5Ev_hI4Qo?t=45)
+1. Create DropdownButton and DropdownMenuItem in UI
 ```
-class Whopile {
-  int id;
-  String name;
-  Whopile(this.id, this.name);
-  static List<Whopile> getWhopile() {
-    return <Whopile>[
-      Whopile(1, 'AL'),
-      Whopile(2, 'Carla'),
-      Whopile(3, 'Chris'),
-      Whopile(4, 'Carol'),
-    ];
-  }
-}
+body: Center(
+  child: Container(
+    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+    child: Column(
+      //mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(2.0),
+              child: DropdownButton<String>(
+                items: [
+                  DropdownMenuItem<String>(
+                    value: "Mom",
+                    child: Center(
+                      child: Text("Mom"),
+                    ),
+                  ),
 ```
-2. Create DropDownState
+2. onChanged sets the controller text
 ```
-tbd
-```
-3. Call DropDown List in UI
-```
-tbd
+  onChanged: (_value) => {
+    print(_value.toString()),
+    setState(() {
+      whoController.text = _value;
+    }),
+  },
 ```
 
 ## Debug catsheets
