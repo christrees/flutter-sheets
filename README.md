@@ -332,8 +332,81 @@ An Observatory debugger and profiler on PH 1 is available at: http://127.0.0.1:5
 
   C:\src>
   ```
-  
- 
+
+### Disable Hyper-V and install Android
+1. To [disable Hyper-V](https://support.microsoft.com/en-us/help/3204980/virtualization-applications-do-not-work-together-with-hyper-v-device-g) in Control Panel, follow these steps:
+  - In Control Panel, select Programs and Features.
+  - Select Turn Windows features on or off.
+  - Expand Hyper-V, expand Hyper-V Platform, and then clear the Hyper-V Hypervisor check box. 
+2. Enable [Android virtual device](https://developer.android.com/studio/run/emulator)
+
+## [Install Flutter on MAC OS](https://flutter.dev/docs/get-started/install/macos)
+NOTE: Apple foo-bar on XCode requires 10.15.6 Catalina which cannot be installed on older macs without metal.  A non-offical bios hack exist from [http://dosdude1.com](http://dosdude1.com) the [video tutorial](https://www.youtube.com/watch?v=mytdmyZNgsM) I used.  See 
+
+1. Install [flutter from github](https://github.com/flutter/flutter)
+```
+catmini:~ cat$ mkdir code
+catmini:~ cat$ cd code/
+catmini:code cat$ git clone https://github.com/flutter/flutter.git
+Cloning into 'flutter'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 249493 (delta 2), reused 4 (delta 0), pack-reused 249478
+Receiving objects: 100% (249493/249493), 106.11 MiB | 1.34 MiB/s, done.
+Resolving deltas: 100% (191632/191632), done.
+```
+2. Add Flutter path to bashrc and bash_profile
+``` 
+catmini:code cat$ vi ~/.bash_
+.bash_history   .bash_profile   .bash_sessions/ 
+catmini:code cat$ vi ~/.bashrc 
+catmini:code cat$ cat ~/.bashrc 
+export PATH=$PATH:$HOME/Library/Python/2.7/bin
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/code/flutter/bin"
+catmini:code cat$ 
+catmini:code cat$ source /Users/cat/.bashrc 
+catmini:~ cat$ cat ~/.bash_profile 
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/Users/cat/code/flutter/bin
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+catmini:~ cat$ soruce ~/.bash_profile
+catmini:code cat$ which flutter
+/Users/cat/code/flutter/bin/flutter
+catmini:code cat$ which flutter dart
+/Users/cat/code/flutter/bin/flutter
+/Users/cat/code/flutter/bin/dart
+```
+3. Pre-download development binaries
+```
+```
+
+## Mac flutter prep
+1. Bios hack  [http://dosdude1.com/catalina/](http://dosdude1.com/catalina/) via  [video tutorial](https://www.youtube.com/watch?v=mytdmyZNgsM)
+  - Download http://dosdude1.com/catalina/ [TC 4:07](https://youtu.be/mytdmyZNgsM?t=247)
+  - Start Catalina Patcher [TC 5:39](https://youtu.be/mytdmyZNgsM?t=339)
+  - Allow Patcher to run via Preferences Security [TC 6:13](https://youtu.be/mytdmyZNgsM?t=373)
+  - Patcher will download a version of OS [TC 7:38](https://youtu.be/mytdmyZNgsM?t=458)
+  - Patcher will build a bootable installer UIEF USB 32GB [TC 8:14](https://youtu.be/mytdmyZNgsM?t=494)
+  - Once complete shutdown mac [TC 9:32](https://youtu.be/mytdmyZNgsM?t=572)
+  - Reboot mac from USB stick hold option key to force USB boot [TC 9:45](https://youtu.be/mytdmyZNgsM?t=585)
+  - In Recovery mode goto Disk Utility and format drive as APFS if you are running High Serria [TC 11:55](https://youtu.be/mytdmyZNgsM?t=715)
+  - Reinstall MAC OSX on the targe hard drive [TC 12:33](https://youtu.be/mytdmyZNgsM?t=753)
+  = Let patcher install and reboot by itself [TC 13:16](https://youtu.be/mytdmyZNgsM?t=796)
+  - On the 2nd reboot hold down option to get back into Patch Recover Utilities [TC 13:35](https://youtu.be/mytdmyZNgsM?t=815) see at [TC 14:25](https://youtu.be/mytdmyZNgsM?t=865)
+  - Run the MacOS Post Install in Utilites [TC 14:52](https://youtu.be/mytdmyZNgsM?t=892)
+  - This should apply patches for you mac verify it detects the correct mac [TC 15:09](https://youtu.be/mytdmyZNgsM?t=909)
+  - Should Reboot and run Catalina [TC 16:12](https://youtu.be/mytdmyZNgsM?t=972)
+  - Might install video drivers durning first boot
+  - Run the patcher updater to finish updates [TC 20:23](https://youtu.be/mytdmyZNgsM?t=1223)
+  - Should be good to go now frikn Apple sucks
+2. Install XCode via the AppStore
+  - should be a normal install
+3. Install [Android Studio](https://developer.android.com/studio/) on Mac
+  - Download android-studio
+
 ### Resources
 - [Learn How to Save Data from Flutter App to Google Sheets | Flutter Tutorial For Beginners](https://www.youtube.com/watch?v=x2CoecrzBCA)
 - [Flutter PWA Tutorial - 1/2](https://www.youtube.com/watch?v=i6GS3lCkAY8)
