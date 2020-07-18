@@ -4,6 +4,9 @@ flutter application to read and write google sheets [catsheets](https://docs.goo
 ## [Add photo sharing](https://codelabs.developers.google.com/codelabs/google-photos-sharing/#0)
 Adding photo share and link into [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
 
+## [Add QR Codes](https://medium.com/flutter-community/working-with-barcodes-and-qr-codes-in-flutter-fbb3a2d4ede7)
+Adding QR Code for storage box scan.
+
 ## [Add Geolocation](https://pub.dev/packages/geolocator) git commit "geo working"
 Adding geolocation to row data column 'where' on save
 
@@ -424,4 +427,11 @@ catmini:code cat$ which flutter dart
 - [tbd]()
 - [tbd]()
 - [tbd]()
+- [tbd]()
+- [git-touch - github](https://github.com/git-touch/git-touch/tree/master/lib)
+- [Git services in flutter](https://flutterawesome.com/a-git-services-including-github-built-with-flutter/)
+- [flutter templates](https://flutterawesome.com/tag/templates/)
+- [flutter_realistic_forms](https://github.com/seenickcode/flutter_realistic_forms)
+- [Uber clone with flutter](https://www.youtube.com/playlist?list=PLmnT6naTGy2TNKTW2W-twfG_gFuCtnFQF)
+- [Uber clone with flutter - github](https://github.com/Santos-Enoque/uber_clone_with_flutter)
 
