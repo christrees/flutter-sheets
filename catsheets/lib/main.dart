@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         print("Response: $response");
         if (response == FormController.STATUS_SUCCESS) {
           _showSnackbar("Feedback Submitted");
+          _clearForm();
         } else {
           _showSnackbar("Error Occurred!");
         }
@@ -60,6 +61,17 @@ class _MyHomePageState extends State<MyHomePage> {
       _showSnackbar("Submitting Feedback");
       formController.submitForm(feedbackForm);
     }
+  }
+
+  _clearForm() {
+    _showSnackbar("Clearing Form");
+    setState(() {
+      whoController.text = "";
+      whatController.text = "";
+      whichController.text = "";
+      whyController.text = "";
+      photoController.text = "";
+    });
   }
 
   _showSnackbar(String message) {
@@ -160,11 +172,18 @@ class _MyHomePageState extends State<MyHomePage> {
                         print(_value.toString()),
                         setState(() {
                           whatController.text = _value;
+                          whichController.text = _value+"-"+DateTime.now().toString();
                         }),
                       },
                       hint: Text("Select Pile"),
                     ),
                   ),
+                  RaisedButton(
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      onPressed: _clearForm,
+                      child: Text('Clear Form'),
+                    )
                 ],
               ),
               Form(

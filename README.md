@@ -420,6 +420,30 @@ catmini:code cat$ flutter doctor
   - Install Android Studio
   - Fire up XCode and accept stuff
 
+## [Flutter - ios](https://flutter.dev/docs/get-started/install/macos#deploy-to-ios-devices) device setup
+1. Install CocoaPods
+```
+cat@cats-Mac-mini catsheets % sudo gem install cocoapods
+cat@cats-Mac-mini catsheets % pod setup
+```
+2. Follow Xcode signing flow
+  - Open Xcode workspace in project
+```
+cat@cats-Mac-mini catsheets % pwd
+/Users/cat/code/flutter-sheets/catsheets
+cat@cats-Mac-mini catsheets % open ios/Runner.xcworkspace
+```
+  - Select device by run button
+  - Select Runner project
+  - In Runner target settings make sure Development Team is selected
+  - Trust Devece and Dev Cert on Device
+    - General > Device Management
+  - Verify General > Indentity > Bundle Identifier is unique
+3. Start flutter project
+```
+cat@cats-Mac-mini catsheets % flutter run
+```
+
 ### Resources
 - [Learn How to Save Data from Flutter App to Google Sheets | Flutter Tutorial For Beginners](https://www.youtube.com/watch?v=x2CoecrzBCA)
 - [Flutter PWA Tutorial - 1/2](https://www.youtube.com/watch?v=i6GS3lCkAY8)
