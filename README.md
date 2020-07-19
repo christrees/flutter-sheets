@@ -384,7 +384,13 @@ catmini:code cat$ which flutter dart
 ```
 3. Pre-download development binaries
 ```
+catmini:code cat$ flutter precache
 ```
+4. Run flutter doctor
+```
+catmini:code cat$ flutter doctor
+```
+  - Keep running flutter doctor and fix issue
 
 ## Mac flutter prep
 1. Bios hack  [http://dosdude1.com/catalina/](http://dosdude1.com/catalina/) via  [video tutorial](https://www.youtube.com/watch?v=mytdmyZNgsM)
@@ -406,9 +412,13 @@ catmini:code cat$ which flutter dart
   - Run the patcher updater to finish updates [TC 20:23](https://youtu.be/mytdmyZNgsM?t=1223)
   - Should be good to go now frikn Apple sucks
 2. Install XCode via the AppStore
-  - should be a normal install
+  - should be a normal install via AppStore takes a LONG TIME
+  - Fire up XCode and accept stuff
+  - Quit XCode
 3. Install [Android Studio](https://developer.android.com/studio/) on Mac
-  - Download android-studio
+  - Download android-studio-ide.dmg
+  - Install Android Studio
+  - Fire up XCode and accept stuff
 
 ### Resources
 - [Learn How to Save Data from Flutter App to Google Sheets | Flutter Tutorial For Beginners](https://www.youtube.com/watch?v=x2CoecrzBCA)
