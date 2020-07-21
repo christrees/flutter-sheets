@@ -7,6 +7,68 @@ Adding photo share and link into [catsheets](https://docs.google.com/spreadsheet
 ## [Add QR Codes](https://medium.com/flutter-community/working-with-barcodes-and-qr-codes-in-flutter-fbb3a2d4ede7)
 Adding QR Code for storage box scan.
 
+## [Fix Permissions on ios](https://dev.to/ahmedcharef/flutter-wait-user-enable-gps-permission-location-4po2)
+
+- [Fix Permissions on ios](https://dev.to/ahmedcharef/flutter-wait-user-enable-gps-permission-location-4po2)
+- [permission_handler 5.0.1+1](https://pub.dev/packages/permission_handler)
+- [Flutter Navigation](https://flutter.dev/docs/cookbook/navigation/navigation-basics)
+- [ERROR_ALREADY_REQUESTION_PERMISSIONS on flutter](https://stackoverflow.com/questions/56069917/error-already-requesting-permissions-on-flutter)
+- [location_permissions](https://pub.dev/packages/location_permissions)
+
+1. Verify pubspec.yaml file
+```
+dependencies:
+  permission_handler: ^4.4.0+hotfix.2
+```
+  - Update pubs
+  ```
+  flutter pub get
+  ```
+2. Import into Dart code lib/main.dart
+```
+import 'package:permission_handler/permission_handler.dart';
+```
+
+## [Fix Geolocation on ios](https://dev.to/ahmedcharef/flutter-wait-user-enable-gps-permission-location-4po2)
+
+1. Verify pubspec.yaml file
+```
+dependencies:
+  geolocator: ^5.3.0
+```
+  - Update pubs
+  ```
+  flutter pub get
+  ```
+2. Add permissions to android/app/src/profile/AndroidManifest.xml
+```
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
+3. Add permissions to ios/runner/Info.plist
+```
+<key>NSLocationAlwaysUsageDescription</key>
+<string>Needed to access location</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Needed to access location</string>
+```
+4. Verify gradle.properties
+```
+android.useAndroidX=true
+android.enableJetifier=true
+```
+5. Verify compileSdkVersion in android/app/build.gradle is 28
+```
+android {
+ compileSdkVersion 28
+ ...
+}
+```
+6. Verify Dart code import
+```
+import 'package:geolocator/geolocator.dart';
+```
+
 ## [Add Geolocation](https://pub.dev/packages/geolocator) git commit "geo working"
 Adding geolocation to row data column 'where' on save
 
@@ -439,12 +501,37 @@ cat@cats-Mac-mini catsheets % open ios/Runner.xcworkspace
   - Trust Devece and Dev Cert on Device
     - General > Device Management
   - Verify General > Indentity > Bundle Identifier is unique
-3. Start flutter project
+3. Start simulator and flutter project
 ```
+cat@cats-Mac-mini catsheets % open -a Simulator
 cat@cats-Mac-mini catsheets % flutter run
 ```
+4. You can verify available emulators
+```
+cat@cats-Mac-mini catsheets % flutter emulators
+1 available emulator:
+
+apple_ios_simulator • iOS Simulator • Apple • ios
+
+To run an emulator, run 'flutter emulators --launch <emulator id>'.
+To create a new emulator, run 'flutter emulators --create [--name xyz]'.
+
+You can find more information on managing emulators at the links below:
+  https://developer.android.com/studio/run/managing-avds
+  https://developer.android.com/studio/command-line/avdmanager
+cat@cats-Mac-mini catsheets % 
+```
+
+## [Flutter - android](https://developer.android.com/studio/run/emulator) device setup
+1. Create AVD profile
+  - Android Studio -> Configure -> AVD Manager
+  - Create Virtual Device -> Pixel 3
+  - Relase R (download)
 
 ### Resources
+- [Create Android Emulators via Command line Flutter App Part 1](https://www.youtube.com/watch?v=7-mvzxsTYV0)
+- [Create Android Emulators via Command line Flutter App Part 2](https://www.youtube.com/watch?v=o86slgxqhTU)
+- [Create Android Emulators via Command line Flutter App Part 3](https://www.youtube.com/watch?v=izQOI5ahjDc)
 - [Learn How to Save Data from Flutter App to Google Sheets | Flutter Tutorial For Beginners](https://www.youtube.com/watch?v=x2CoecrzBCA)
 - [Flutter PWA Tutorial - 1/2](https://www.youtube.com/watch?v=i6GS3lCkAY8)
 - [Flutter Official PWA Support - 2/2](https://www.youtube.com/watch?v=abKzgvl-Ceg)

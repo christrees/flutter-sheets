@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:catsheets/controller.dart';
+import 'package:catsheets/gpsLocation.dart';
 import 'package:catsheets/models/form.dart';
 import 'package:geolocator/geolocator.dart';
+//import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,10 +18,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      //home: AskForPermission(),
       home: MyHomePage(title: 'catsheets Demo Home Page'),
     );
   }
 }
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -37,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController whyController = TextEditingController();
   TextEditingController whereController = TextEditingController();
   TextEditingController photoController = TextEditingController();
+
   Future<void> _submitForm() async {
     if (_formKey.currentState.validate()) {
       Position position = await Geolocator()
