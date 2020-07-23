@@ -7,6 +7,50 @@ Adding photo share and link into [catsheets](https://docs.google.com/spreadsheet
 ## [Add QR Codes](https://medium.com/flutter-community/working-with-barcodes-and-qr-codes-in-flutter-fbb3a2d4ede7)
 Adding QR Code for storage box scan.
 
+## [Add PWA or Web Build](https://flutter.dev/docs/get-started/web)
+- [Flutter - Web build get started](https://flutter.dev/docs/get-started/web)
+= [js 0.6.2 - pub.dev](https://pub.dev/packages/js)
+- [Chrome DevTools - Override Geolocation](https://developers.google.com/web/tools/chrome-devtools/device-mode/geolocation)
+- [Flutter Web and Location](https://dev.to/aseemwangoo/flutter-web-and-location-2l1)
+- [Flutter Web and Location another version](https://flatteredwithflutter.com/detect-user-location-in-flutter-web/)
+- [Flutter: Getting User's location with Geolocator Plugin](https://www.digitalocean.com/community/tutorials/flutter-geolocator-plugin)
+
+1. Setup to enable web support
+```
+cat@cats-Mac-mini flutter-sheets % source ~/.bash_profile
+cat@cats-Mac-mini flutter-sheets % flutter channel beta
+cat@cats-Mac-mini flutter-sheets % flutter upgrade                                  
+cat@cats-Mac-mini flutter-sheets % flutter config --enable-web
+```
+2. Should have a new web device
+```
+cat@cats-Mac-mini flutter-sheets % flutter devices       
+2 connected devices:
+
+Web Server (web) • web-server • web-javascript • Flutter Tools
+Chrome (web)     • chrome     • web-javascript • Google Chrome 84.0.4147.89
+cat@cats-Mac-mini flutter-sheets % 
+```
+3. Upgrade current project
+```
+cat@cats-Mac-mini flutter-sheets % flutter create --org com.christrees.catsheets .
+```
+  - Had error if I did not use --org com.christrees.catsheets
+  - [Flutter web create issue for existing apps](https://stackoverflow.com/questions/57992350/flutter-web-create-issue-in-existing-flutter-app)
+4. Build and serve app from localhost
+```
+cat@cats-Mac-mini flutter-sheets % flutter run -d chrome
+```
+  - Had issues with geolocation, thought it was permissions
+  - Found out that the old permissions stuff was not required, so I commented it out.  You can accept the permissions in the settings of the app via the OS.
+  - Web geolocation needs to redirect plugin calls to js navigator.  This should work but I did not get it running.  Pretty sure it's just my understanding of dart that is lacking.
+  - For now, commented out geolocation call and just put in a static to verify the web app can write to google catsheets that works
+  - I will need to go fix geolocation plugin to call the browser correctly.
+5. Build for deploy
+```
+cat@cats-Mac-mini flutter-sheets % flutter build web
+```
+
 ## [Fix Permissions on ios](https://dev.to/ahmedcharef/flutter-wait-user-enable-gps-permission-location-4po2)
 
 - [Fix Permissions on ios](https://dev.to/ahmedcharef/flutter-wait-user-enable-gps-permission-location-4po2)
@@ -28,6 +72,7 @@ dependencies:
 ```
 import 'package:permission_handler/permission_handler.dart';
 ```
+
 
 ## [Fix Geolocation on ios](https://dev.to/ahmedcharef/flutter-wait-user-enable-gps-permission-location-4po2)
 

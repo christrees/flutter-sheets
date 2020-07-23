@@ -1,9 +1,18 @@
+@JS('navigator.geolocation')
+library jslocation;
+import 'package:js/js.dart';
+
 import 'package:flutter/material.dart';
 import 'package:catsheets/controller.dart';
-import 'package:catsheets/gpsLocation.dart';
 import 'package:catsheets/models/form.dart';
 import 'package:geolocator/geolocator.dart';
+//import 'package:catsheets/gpsLocation.dart';
 //import 'package:permission_handler/permission_handler.dart';
+
+
+@JS('getCurrentPosition') //Geolocation API's getCurrentPosition
+
+//external void getCurrentPosition(Function success(GeolocationPosition pos));
 
 void main() {
   runApp(MyApp());
@@ -41,18 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController whyController = TextEditingController();
   TextEditingController whereController = TextEditingController();
   TextEditingController photoController = TextEditingController();
-
   Future<void> _submitForm() async {
     if (_formKey.currentState.validate()) {
-      Position position = await Geolocator()
-          .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      //Position position = 
+      //  await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
       FeedbackForm feedbackForm = FeedbackForm(
           DateTime.now().toString(),
           whoController.text,
           whatController.text,
           whichController.text,
           whyController.text,
-          position.toString(), //whereController.text,
+          //position.toString(), //
+          "PWAdebugLocation", // whereController.text,
           photoController.text);
       FormController formController = FormController((String response) {
         print("Response: $response");
