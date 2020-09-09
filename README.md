@@ -1,11 +1,47 @@
 # flutter-sheets
 flutter application to read and write google sheets [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
 
+### Quick Start
+1. Pull repo from [https://github.com/christrees/flutter-sheets](https://github.com/christrees/flutter-sheets)
+```
+cat@cats-Mac-mini ~ % cd code 
+cat@cats-Mac-mini code % git pull https://github.com/christrees/flutter-sheets.git
+cat@cats-Mac-mini code % cd flutter-sheets/catsheets/
+cat@cats-Mac-mini catsheets % 
+```
+
+2. Setup env and find device to test
+```
+cat@cats-Mac-mini catsheets % source ~/.bash_profile
+cat@cats-Mac-mini catsheets % flutter devices
+4 connected devices:
+
+PH 1 (mobile)                 • PM1LHxxxxxxxxxxx                         • android-arm64  • Android 10 (API 29)
+Chris Trees’s iPhone (mobile) • aaaaaaaxxxxxxxxxbbbbbbbbeeeeeecccccccc79 • ios            • iOS 12.4.7
+Web Server (web)              • web-server                               • web-javascript • Flutter Tools
+Chrome (web)                  • chrome                                   • web-javascript • Google Chrome 85.0.4183.83
+cat@cats-Mac-mini catsheets % 
+```
+
+3. Build and test selected device
+```
+-d, --device-id             Target device id or name (prefixes allowed).
+
+cat@cats-Mac-mini catsheets % flutter run -d chrome
+cat@cats-Mac-mini catsheets % flutter run -d "Web Server"
+cat@cats-Mac-mini catsheets % flutter run -d "PH 1"
+cat@cats-Mac-mini catsheets % flutter run -d "Chris Trees’s iPhone"
+```
+
+# ToDo
+
 ## [Add photo sharing](https://codelabs.developers.google.com/codelabs/google-photos-sharing/#0)
 Adding photo share and link into [catsheets](https://docs.google.com/spreadsheets/d/1jyKoInSV74FM7iSPGm5Pl8q-y4SwAM5uMHNkcMP2sMg/edit#gid=0)
 
 ## [Add QR Codes](https://medium.com/flutter-community/working-with-barcodes-and-qr-codes-in-flutter-fbb3a2d4ede7)
 Adding QR Code for storage box scan.
+
+# Done
 
 ## [Add PWA or Web Build](https://flutter.dev/docs/get-started/web)
 - [Flutter - Web build get started](https://flutter.dev/docs/get-started/web)
